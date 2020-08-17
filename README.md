@@ -19,5 +19,7 @@ Cada ser humano pode estudar o código e ainda auditar aqui no GitHub.
 Além disso, a plataforma garante poder computacional a todos, ou seja, ao contrário de sites normais que você precisa de um servidor central para hospedar, na BrCrypto os "sites"/applicativos estão hospedados em todos os 'nós' da rede, ou melhor, em todos os celulares e computadores que participarem da rede.
 A descentralização dos Apps para smartphone faz com que cada pessoa tenha total controle de seus aplicativos, extinguindo a necessidade de uma empresa por trás guardando suas informações.
 
+Para que a plataforma funciona em todo território nacional precisamos de tua ajuda direta. Mesmo não sabendo como ajudar, pode ter certeza que você encontra um lugar aqui!
+
 Uma plataforma, uma moeda, uma garantia!
 Não confie! Verifique ;)
