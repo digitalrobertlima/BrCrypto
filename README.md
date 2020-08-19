@@ -1,6 +1,6 @@
 # BrCrypto
 
-Uma plataforma descentralizada de comunicação e registros de forma segura sendo criptografada via SHA-256.
+BrCrypto é uma plataforma descentralizada de comunicação e registros de aplicações de forma segura sendo criptografada via SHA-256.
 BrCrypto tem por influência várias outras criptomoedas em seu conceito.
 Somos influenciados por todas as plataformas centralizadas que controlam desde nossas informações pessoais chegando até mesmo a governarem nosso dinheiro.
 O projeto tende a ser desenhenhado fortemente com base nas plataformas NULS, Ethereum e no Algoritmo CryptoNigth.
@@ -15,8 +15,8 @@ Dash
 Entre outras...
 
 Prezamos muito pela liberdade das fontes, por exemplo, jornalistas. Por isso, a plataforma permite que profissionais possam fazer seu trabalho de forma segura e anônima.
-Cada ser humano pode estudar o código e ainda auditar aqui no GitHub.
-Além disso, a plataforma garante poder computacional a todos, ou seja, ao contrário de sites normais que você precisa de um servidor central para hospedar, na BrCrypto os "sites"/applicativos estão hospedados em todos os 'nós' da rede, ou melhor, em todos os celulares e computadores que participarem da rede.
+Cada brasileiro que carrega a curiosidade em sua essência pode estudar o código fonte e ainda auditar no GitHub.
+Além disso, a plataforma garante poder computacional a todos, ou seja, ao contrário de sites da web 2.0 considerados 'normais' que você precisa de um servidor central para hospedar, na BrCrypto os "sites"/applicativos estão hospedados em todos os 'nós' da rede, ou melhor, em todos os celulares e computadores que participarem da rede.
 A descentralização dos Apps para smartphone faz com que cada pessoa tenha total controle de seus aplicativos, extinguindo a necessidade de uma empresa por trás guardando suas informações.
 
 Para que a plataforma funciona em todo território nacional precisamos de tua ajuda direta. Mesmo não sabendo como ajudar, pode ter certeza que você encontra um lugar aqui!
