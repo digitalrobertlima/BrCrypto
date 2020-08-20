@@ -9,6 +9,8 @@ class Block:
     self.hash = hash
 
 def calculateHash(index, previousHash, timestamp, data):
-    return hashlib.sha256(index + previousHash + timestamp + data).hexdigest()
+    return hashlib.sha256(str(index) + previousHash + str(timestamp) + data).hexdigest()
 
-genesisBlock = Block(0, "", int(round(time.time()*1000)), "Genesis Block", calculateHash(0, "", int(round(time.time()*1000)), "Genesis Block"))
+ts = int(round(time.time()*1000)) 
+
+genesisBlock = Block(0, "", ts, "Genesis Block", calculateHash(0, "", ts, "Genesis Block"))
