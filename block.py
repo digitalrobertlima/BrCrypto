@@ -12,16 +12,33 @@ class Block:
     self.difficulty = difficulty
     self.nonce = nonce
 
-def calculateHash(index, previousHash, timestamp, data):
-    return hashlib.sha256(str(index) + previousHash + str(timestamp) + data).enconde('UTF-8').hexdigest()
+def calculateHash(index, previousHash, timestamp, data, difficulty, nonce):
+ return hashlib.sha256(str(index) + previousHash + str(timestamp) + data + str(difficulty) + str(nonce)).enconde('UTF-8').hexdigest()
 
 ts = int(round(time.time()*1000)) 
 
 genesisBlock = Block(0, "", ts, "Genesis Block", calculateHash(0, "", ts, "Genesis Block"))
 
-def hashMatchesDifficulty(self,hash, difficulty):
+def hashMatchesDifficulty(self, hash, difficulty):
     hashBinary = binascii.unhexlify(hash)
     requiredPrefix = '0'*int(difficulty)
     return hashBinary.startswith(requiredPrefix)
 
-def findBlock
+def findBlock(self, index, previousHash, timestamp, data, difficulty):
+    nonce = 0
+    while True:
+        hash = self.calculateHash(index, previousHash, timestamp, data, difficulty, nonce)
+        if self.hashMatchesDifficulty(hash, difficulty):
+            block = Block(index, previousHash, timestamp, data, difficulty, nonce)
+            return block
+        nonce = nonce + 1
+
+def getDifficulty(self):
+    latestBlock = self.getLatestBlock()
+    if latestBlock.index % self.DIFFICULTY_ADJUSTMENT == 0 and latestBlock.index != 0:
+        return self.getAdjustedDifficulty()
+        esle:
+        return latestBlock.difficulty
+
+def getAdjustedDifficu
+
