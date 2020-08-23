@@ -37,8 +37,16 @@ def getDifficulty(self):
     latestBlock = self.getLatestBlock()
     if latestBlock.index % self.DIFFICULTY_ADJUSTMENT == 0 and latestBlock.index != 0:
         return self.getAdjustedDifficulty()
-        esle:
+    else:
         return latestBlock.difficulty
 
-def getAdjustedDifficu
-
+def getAdjustedDifficulty(self):
+    prevAdjustmentBlock = self.blockchain[len(self.blockchain) - self.DIFFICULTY_ADJUSTMENT]
+    timeExpected = self.BLOCK-INTERVAL * self.DIFFICULTY_ADJUSTMENT
+    timeTaken = latestBlock.timestamp - prevAdjustmentBlock.timestamp
+    if timeTaken < timeExpected * 2:
+        return prevAdjustmentBlock.difficulty + 1
+    elif timeTaken > timeExpected * 2:
+    return prevAdjustmentBlock.difficulty - 1
+    else:
+        return prevAdjustmentBlock.difficulty
