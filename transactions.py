@@ -1,5 +1,6 @@
 import hashlib
 import binascii
+from ecdsa import SigningKey, NIST384p
 
 class Transaction:
     def __init__(self):
@@ -53,3 +54,26 @@ class UnspentOutputs:
         for output in transaction.outputs:
             outputContents += (output.address + output.amount)
             return hashlib.sha256((str(inputContents) + str(outputContents)).encode('UTF-8')).hexdigest()
+        
+    def crateSigningKey():
+        return SigningKey.generate(curve=NIST384p)
+    
+    def signingInput(transaction, inputIndex, listUnspentOutput, key):
+        inpt = transaction.inputs[inputIndex]
+        data = transaction.id
+        verifyingUtxo = finsUnspentOutput(inpt.outputId, inpt.outputIndex, listUnspentOutput)
+        return key.sign(data)
+    
+    def validatingInput(input, transaction, listUnspentOutput):
+        for utxo in listUnspentOutput:
+            if input.outputIndex == utxo.outputIndex and input.outputId == utxo.outputId:
+                address = utxo.address
+                key = address.get_verifying_key()
+                return key.verify(input.signature, transaction.id)
+            return False
+        
+    def validatingTransactionId(id, transaction):
+        if idTransaction(transaction) == id:
+            return True
+        else:
+            return False
