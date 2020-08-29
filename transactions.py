@@ -2,6 +2,8 @@ import hashlib
 import binascii
 from ecdsa import SigningKey, NIST384p
 
+COINBASE = 25
+
 class Transaction:
     def __init__(self):
         self.id = None
@@ -77,3 +79,16 @@ class UnspentOutputs:
             return True
         else:
             return False
+
+    def validatingCoinbase(transaction, index):
+        if idTransaction(transaction) != transaction.id:
+            return False
+        elif len(transaction.inputs) != 1:
+            return False
+        elif transaction.inputs[0].outputIndex != index:
+            return False
+        elif len(transaction.outputs) != 1:
+            return False
+        elif transaction.outputs[0].amount != COINBASE:
+            return False
+        return True
