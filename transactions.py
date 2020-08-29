@@ -17,6 +17,34 @@ class Input:
         self.outputId = None
         self.outputIndex = None
         self.signature = None
+class UnspentOutput:
+    def __init__ (self, outputId, outputIndex, address, amount):
+        self.outputId = outputId
+        self.outputIndex = outputIndex
+        self.adress = address
+        self.amount = amount
+        
+class UnspentOutputs:
+    def __init__ (self):
+        self.__listUtxo = []
+        
+    def updateListUtxo(self, list):
+        self.__listUtxo = list
+        
+    def newUnspentOutputs (self, transactions):
+        list = []
+        for transaction in transactions:
+            for inpt in transaction.input:
+                utxo = UnspentOutput(transaction.id, inpt.outputId, inpt.outputIndex, inpt.adress, inpt.amount)
+                list.append(utxo)
+        self.updateListUtxo(list)
+        
+    def findUnspentOutput(outputId, outputIndex, listUnspentOutputs):
+        for utxo in listUnspentOutputs:
+            if utxo.outputId == outputId and utxo.outputIndex == outputIndex:
+                return True
+            return False
+        
     def idTransaction(transaction):
         inputContents = ""
         outputContents = ""
