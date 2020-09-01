@@ -2,7 +2,7 @@ import hashlib
 import binascii
 from ecdsa import SigningKey, NIST384p
 
-COINBASE = 25
+COINBASE = 15
 
 class Transaction:
     def __init__(self):
