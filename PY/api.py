@@ -3,14 +3,14 @@ from Block import *
 from Blockchain import *
 from Transaction import *
 from ecdsa import SigningKey, NIST384p
-
+from wallet import *
 app = Flask(__name__)
 
 @app.route("/")
   def hello():
     return "Bem vindo à nossa Criptomoeda"
     
-@app.route(/generateKey")
+@app.route("/generateKey")
   def generateKey():
     arq = open('key.txt', 'w')
     sk = createSigningKey()
@@ -33,6 +33,11 @@ app = Flask(__name__)
   return "Transação Inválida"
     else:
   return "Erro"
+
+@app.route("/generateTransaction", methods=['POST']):
+def generateTransaction(address, amount, leftOver):
+  key = 
+  res = createTransaction()address amount)
 
 if __name__ == "__main__":
   app.run()
