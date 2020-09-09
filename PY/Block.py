@@ -25,10 +25,11 @@ class Blockchain:
     def generateNextBlock(self,data):
         previousBlock = self.getLatestBlock()
         nextIndex = previousBlock.index + 1
-        nextTimestamp = int(round(time.time()*1000))
+        nextTimestamp = int(round(time.time() * 1000))
         nextPreviousHash = previousBlock.hash
         newBlock = Block(nextIndex, nextPreviousHash, nextTimestamp, data,
             calculateHash(nextIndex, nextPreviousHash, nextTimestamp, data))
+            
         if self.validatingBlock(newBlock) == True:
             self.__chain.append(newBlock)
 
@@ -44,8 +45,7 @@ class Blockchain:
 def calculateHash(index, previousHash, timestamp, data, difficulty, nonce):
  return hashlib.sha256(str(index) + previousHash + str(timestamp) + data + str(difficulty) + str(nonce)).enconde('UTF-8').hexdigest()
 
-ts = int(round(time.time()*1000)) 
-
+ts = int(round(time.time() * 1000))
 genesisBlock = Block(0, "", ts, "Genesis Block", calculateHash(0, "", ts, "Genesis Block"))
 
 def hashMatchesDifficulty(self, hash, difficulty):
