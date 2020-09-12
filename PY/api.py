@@ -36,8 +36,8 @@ app = Flask(__name__)
 
 @app.route("/generateTransaction", methods=['POST']):
 def generateTransaction(address, amount, leftOver):
-  key = 
-  res = createTransaction()address amount)
+  sk = open('ket.txt
+  res = createTransaction(address amount)
 
 if __name__ == "__main__":
   app.run()
