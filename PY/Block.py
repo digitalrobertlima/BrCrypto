@@ -3,21 +3,21 @@ import time
 import binascii
 
 class Block:
-    __init__(self, index, previousHash, timestamp, data, hash, difficulty, nonce):
-    self.index = index
-    self.previousHash = previousHash
-    self.timestamp = timestamp
-    self.data = data
-    self.hash = hash
-    self.difficulty = difficulty
-    self.nonce = nonce
+    def __init__(self, index, previousHash, timestamp, data, hash, difficulty, nonce):
+        self.index = index
+        self.previousHash = previousHash
+        self.timestamp = timestamp
+        self.data = data
+        self.hash = hash
+        self.difficulty = difficulty
+        self.nonce = nonce
 
 class Blockchain:
     def __init__(self, genesisBlock):
-    self.__chain = []
-    self.__chain.append(genesisBlock)
-    self.DIFFICULTY_ADJUSTMENT = 10
-    self.BLOCK_INTERVAL = 15
+        self.__chain = []
+        self.__chain.append(genesisBlock)
+        self.DIFFICULTY_ADJUSTMENT = 10
+        self.BLOCK_INTERVAL = 15
     
     def getLatestBlock(self):
         return self.__chain[len(self.__chain) - 1]
